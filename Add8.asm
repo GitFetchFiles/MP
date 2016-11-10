@@ -1,0 +1,19 @@
+
+DATA SEGMENT
+        NO1 DB 88H
+        NO2 DB 77H
+        ADDI DB ?
+DATA ENDS
+
+CODE SEGMENT
+        ASSUME CS:CODE,DS:DATA
+	START:
+		MOV AX, DATA
+		MOV DS, AX
+		MOV AX, 0000H
+                MOV AL, NO1
+                ADD AL, NO2
+                MOV ADDI, AL
+		INT 3H
+	CODE ENDS
+END START

@@ -1,0 +1,20 @@
+DATA SEGMENT 
+        NO1 DW 8888H
+        NO2 DW 7777H
+        SUBTRACTION DW ?
+DATA ENDS
+
+CODE SEGMENT
+        ASSUME CS:CODE,DS:DATA
+	START:
+		MOV AX, DATA
+		MOV DS, AX
+		MOV AX, 0000H
+		MOV AX, NO1
+                SUB AX, NO2
+		MOV CX, 0000H 
+                SBB CL, 00H
+                MOV SUBTRACTION, AX
+		INT 3H
+	CODE ENDS
+END START
